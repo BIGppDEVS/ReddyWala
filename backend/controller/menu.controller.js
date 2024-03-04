@@ -24,7 +24,7 @@ const getMenuItemsOfHotel = async (req, res) => {
 
 const deleteMenuItem = async (req, res) => {
   try {
-    let menuItemId = req.params.id;
+    const menuItemId = req.params.id;
     const content = await ContentModel.findOne({ _id: menuItemId });
     if (content) {
       await content.deleteOne({ _id: menuItemId });
